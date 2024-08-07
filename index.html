@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <ul id="test">
+        <li class="item"></li>
+        <li class="book"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li id="music"></li>
+        <li class="item"></li>
+        <li></li>
+    </ul>
+
+
+    <!-- *************************** calculator ************************ -->
+
+    <form action="" name="clc">
+
+
+        <input type="text" name="display"> <br><br>
+
+
+
+        <input type="button" value="0" onclick="clc.display.value+=0">
+        <input type="button" value="1" onclick="clc.display.value+=1">
+        <input type="button" value="2" onclick="clc.display.value+=2">
+        <input type="button" value="+" onclick="clc.display.value+='+'"> <br>
+
+
+        <input type="button" value="3" onclick="clc.display.value+=3">
+        <input type="button" value="4" onclick="clc.display.value+=4">
+        <input type="button" value="5" onclick="clc.display.value+=5">
+        <input type="button" value="-" onclick="clc.display.value+='-'"> <br>
+
+        <input type="button" value="6" onclick="clc.display.value+=6">
+        <input type="button" value="7" onclick="clc.display.value+=7">
+        <input type="button" value="8" onclick="clc.display.value+=8">
+        <input type="button" value="*" onclick="clc.display.value+='*'"> <br>
+
+        <input type="button" value="9" onclick="clc.display.value+=9">
+        <input type="button" value="." onclick="clc.display.value+='.'">
+        <input type="button" value="CLear" onclick="clc.display.value=''">
+        <input type="button" value="=" onclick="clc.display.value=eval(clc.display.value)"> 
+        <!-- Math.round('eval(clc.display.value)') will give us a round result. -->
+        <input type="button" value="/" onclick="clc.display.value+='/'"> <br>
+
+
+
+    </form>
+
+
+    <script>
+
+        let book = document.querySelector('ul li.book')
+
+        book.textContent = 'Book';
+        book.style.color = 'green';
+
+        let music = document.getElementById('music');
+
+        music.textContent = 'Music';
+        music.style.color = 'blue';
+
+
+        let items = document.querySelectorAll('#test li.item'); // it is used when we want to give any style or make any change on a group of some same tages instead of repeating a same class in each of them
+
+        items.forEach((item , index) => {
+            item.textContent = `${index} : Hello World!`
+            item.style.color = 'red';
+        })
+
+
+    </script>
+    
+</body>
+</html>
